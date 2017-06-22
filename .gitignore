@@ -1,3 +1,6 @@
+# folder to ignore
+dev-functions/
+
 # History files
 .Rhistory
 .Rapp.history
