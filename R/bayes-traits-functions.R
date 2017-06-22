@@ -18,8 +18,9 @@ write.bayestraits <- function(tree, data, variables, dir = "./", na.omit = FALSE
   data = data[,variables, drop = FALSE]
 
   # remove nas if necessary
-  if(na.omit)
+  if(na.omit){
     data = data[complete.cases(data),]
+  } # else replace NAs with hyphens
 
   # prune tree to match rownames in the data
   # for single tree
