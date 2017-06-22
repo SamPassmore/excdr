@@ -45,3 +45,27 @@ write.bayestraits <- function(tree, data, variables, dir = "./", na.omit = FALSE
   write.table(data, file = paste0(dir, filename, ".btdata"),
               quote = FALSE, col.names = FALSE, sep = "\t")
 }
+
+#' Read BayesTraits Log files
+#'
+#' Given a the path of a BayesTraits log file, this function will find the start of the logged output and import the data as a data.frame into R.
+#' @keywords excd, BayesTraits, phylogeny
+#' @param filename the path to the BayesTraits log file
+#' @return A data.frame of the logs found in the BayesTraits log file
+#' @export
+
+read.bayestraits <- function(filename){
+  con = file(filename, "r")
+  i = 1
+  while ( TRUE ) {
+    line = readLines(con, n = 1)
+    if (grepl("\t", line)) {
+      break
+    }
+    i = i + 1
+  }
+  close(con)
+
+  read.table(filename, skip = i-1, sep = '\t', header = TRUE)
+}
+
