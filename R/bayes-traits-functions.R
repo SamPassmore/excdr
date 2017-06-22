@@ -39,9 +39,6 @@ write.bayestraits <- function(tree, data, variables, dir = "./", na.omit = FALSE
     filename = paste0(variables, collapse = "-")
   }
 
-  print(rownames(data))
-  print(tree$tip.label)
-
   ape::write.nexus(tree, file = paste0(dir, filename, ".bttrees"))
   write.table(data, file = paste0(dir, filename, ".btdata"),
               quote = FALSE, col.names = FALSE, sep = "\t")
