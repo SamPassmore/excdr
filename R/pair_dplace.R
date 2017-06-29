@@ -11,9 +11,7 @@
 
 pair_dplace = function(tree, csv, family){
 
-  devtools::use_data(id, excdr, internal = TRUE)
-
-  id = id[family]
+  id = ids[family]
 
   id$priority_id = sapply(id$xd_id, .first_id)
   id = id[!is.na(id$priority_id),]
