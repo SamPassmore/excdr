@@ -20,7 +20,12 @@ pair_dplace = function(tree, csv, family){
   csv = csv[order(csv$Cross.dataset.id),]
   csv = merge(csv, id, by.x = "Cross.dataset.id", by.y = "priority_id")
   csv = csv[!duplicated(csv$Cross.dataset.id),]
-  rownames(csv) = as.character(csv$Name_on_tree_tip.x)
+  if("Name_on_tree_tip" %in% colnames(csv))
+    rownames(csv) = as.character(csv$Name_on_tree_tip)
+  else if("Name_on_tree_tip.x" %iN% colnames(csv))
+    rownames(csv) = as.character(csv$Name_on_tree_tip)
+  else
+    stop("Are you sure this is a D-PLACE file?")
 
   if(geiger::is.phylo(tree)){
     treedata2(phy = tree, data = csv)
