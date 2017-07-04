@@ -8,4 +8,6 @@ Description:
 License: GPLv2
 Encoding: UTF-8
 LazyData: true
+Imports: 
+  geiger
 RoxygenNote: 6.0.1.9000
