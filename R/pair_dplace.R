@@ -22,7 +22,7 @@ pair_dplace = function(tree, csv, family){
   csv = csv[!duplicated(csv$Cross.dataset.id),]
   rownames(csv) = as.character(csv$Name_on_tree_tip.x)
 
-  if(is.phylo(tree)){
+  if(geiger::is.phylo(tree)){
     treedata2(phy = tree, data = csv)
   } else {
     lapply(tree, function(t) treedata2(phy = t, data = csv))
