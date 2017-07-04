@@ -20,7 +20,7 @@ pair_dplace = function(tree, csv, family){
   csv = csv[order(csv$Cross.dataset.id),]
   csv = merge(csv, id, by.x = "Cross.dataset.id", by.y = "priority_id")
   csv = csv[!duplicated(csv$Cross.dataset.id),]
-  rownames(csv) = as.character(csv$Name_on_tree_tip)
+  rownames(csv) = as.character(csv$Name_on_tree_tip.x)
 
   if(is.phylo(tree)){
     treedata2(phy = tree, data = csv)
