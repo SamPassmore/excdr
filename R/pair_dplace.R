@@ -22,7 +22,7 @@ pair_dplace = function(tree, csv, family){
   csv = csv[!duplicated(csv$Cross.dataset.id),]
   if("Name_on_tree_tip" %in% colnames(csv))
     rownames(csv) = as.character(csv$Name_on_tree_tip)
-  else if("Name_on_tree_tip.x" %iN% colnames(csv))
+  else if("Name_on_tree_tip.x" %in% colnames(csv))
     rownames(csv) = as.character(csv$Name_on_tree_tip)
   else
     stop("Are you sure this is a D-PLACE file?")
