@@ -23,7 +23,7 @@ pair_dplace = function(tree, csv, family){
   if("Name_on_tree_tip" %in% colnames(csv))
     rownames(csv) = as.character(csv$Name_on_tree_tip)
   else if("Name_on_tree_tip.x" %in% colnames(csv))
-    rownames(csv) = as.character(csv$Name_on_tree_tip)
+    rownames(csv) = as.character(csv$Name_on_tree_tip.x)
   else
     stop("Are you sure this is a D-PLACE file?")
 
