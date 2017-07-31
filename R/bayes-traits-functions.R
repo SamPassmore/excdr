@@ -20,6 +20,8 @@ write.bayestraits <- function(tree, data, variables, dir = "./", na.omit = FALSE
   # remove nas if necessary
   if(na.omit){
     data = data[complete.cases(data),]
+  } else {
+    data[is.na(data)] = "-"
   } # else replace NAs with hyphens
 
   # prune tree to match rownames in the data
@@ -64,6 +66,6 @@ read.bayestraits <- function(filename){
   }
   close(con)
 
-  read.table(filename, skip = i-1, sep = '\t', header = TRUE)
+  read.table(filename, skip = i-1, sep = '\t', header = TRUE, check.names = FALSE)
 }
 
