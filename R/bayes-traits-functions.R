@@ -19,7 +19,7 @@ write.bayestraits <- function(tree, data, variables, dir = "./", na.omit = FALSE
 
   # remove nas if necessary
   if(na.omit){
-    data = data[complete.cases(data),]
+    data = data[complete.cases(data), , drop = FALSE]
   } else {
     data[is.na(data)] = "-"
   } # else replace NAs with hyphens
