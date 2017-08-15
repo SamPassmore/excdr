@@ -1,0 +1,38 @@
+Options:
+Model:                           Discrete: Dependent
+Tree File Name:                  vignette/iroquois-unilineal.bttrees
+Data File Name:                  vignette/iroquois-unilineal.btdata
+Log File Name:                   /Users/sp16194/Desktop/Projects_Git/excdr/iroquois-unilineal-dep.Log.txt
+Save Initial Trees:              False
+Save Trees:                      False
+Summary:                         False
+Seed:                            2179044913
+Analsis Type:                    Maximum Likelihood
+ML Attempt Per Tree:             100
+ML Max Evaluations:              20000
+ML Tolerance:                    0.000001
+ML Algorithm:                    BOBYQA
+Rate Range:                      0.000000 - 3000.000000
+Precision:                       64 bits
+Cores:                           1
+No of Rates:                     8
+Base frequency (PI's):           None
+Character Symbols:               00,01,10,11
+Using a covarion model:          False
+Normalise Q Matrix:              False
+Restrictions:
+    q12                          None
+    q13                          None
+    q21                          None
+    q24                          None
+    q31                          None
+    q34                          None
+    q42                          None
+    q43                          None
+Tree Information
+     Trees:                      1
+     Taxa:                       114
+     Sites:                      1
+     States:                     4
+Tree No	Lh	q12	q13	q21	q24	q31	q34	q42	q43	Root - P(0,0)	Root - P(0,1)	Root - P(1,0)	Root - P(1,1)	
+1	-81.390739	183.903052	0.000000	18.866099	12.894081	45.396712	92.904462	16.471567	18.899955	0.162806	0.179359	0.314651	0.343184	
