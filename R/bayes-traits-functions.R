@@ -59,13 +59,14 @@ read.bayestraits <- function(filename){
   i = 1
   while ( TRUE ) {
     line = readLines(con, n = 1)
-    if (grepl("\t", line)) {
+    if (grepl("Iteration\t", line)|grepl("Tree\t", line)) {
       break
     }
     i = i + 1
   }
   close(con)
 
-  read.table(filename, skip = i-1, sep = '\t', header = TRUE, check.names = FALSE)
+  read.table(filename, skip = i-1, sep = '\t', 
+             header = TRUE, check.names = FALSE, quote=NULL)
 }
 

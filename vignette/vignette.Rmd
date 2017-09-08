@@ -259,5 +259,9 @@ _Does anyone have any functions they want to add? Or suggestions for useful func
 
 D-PLACE data has recently been released on GitHub, this seems like a good opportunity to create a package that downloads the data direct to R and by-pass all the clicking and saving files that make the `pair_dplace` function necessary. However I think this would be more useful in it's own package. 
 
+## Extra functions:
+
+LLR test paired tests of for independant & Dependant
+
 
 
