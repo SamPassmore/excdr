@@ -70,3 +70,25 @@ read.bayestraits <- function(filename){
              header = TRUE, check.names = FALSE, quote=NULL)
 }
 
+#' Read BayesTraits Stones files
+#'
+#' Given a the path of a BayesTraits Stones file, this function will retrieve the marginal likelihood from the bottom of that file.
+#' @keywords excd, BayesTraits, phylogeny
+#' @param filename the path to the BayesTraits Stones file
+#' @return the marginal likelihood
+#' @export
+
+read.stones <- function(filename){
+  con = file(filename, "r")
+  i = 1
+  while (TRUE) {
+    line = readLines(con, n = 1)
+    if (grepl("Log marginal likelihood:	", line)) {
+      break
+    }
+    i = i + 1
+  }
+  close(con)
+  places = regexpr("[0-9.]+", line)
+  as.numeric(substring(line, places[1]))
+}
