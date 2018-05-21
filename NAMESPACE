@@ -2,6 +2,7 @@
 
 export(pair_dplace)
 export(read.bayestraits)
+export(read.stones)
 export(treedata2)
 export(who_are)
 export(write.bayestraits)
