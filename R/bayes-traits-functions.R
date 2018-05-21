@@ -78,17 +78,41 @@ read.bayestraits <- function(filename){
 #' @return the marginal likelihood
 #' @export
 
+# read.stones <- function(filename){
+#   con = file(filename, "r")
+#   i = 1
+#   while (TRUE) {
+#     line = readLines(con, n = 1)
+#     if (grepl("Log marginal likelihood:	", line)) {
+#       break
+#     }
+#     i = i + 1
+#   }
+#   close(con)
+#   places = regexpr("[0-9.]+", line)
+#   as.numeric(substring(line, places[1]))
+# }
+
 read.stones <- function(filename){
   con = file(filename, "r")
   i = 1
-  while (TRUE) {
+  while(TRUE) {
     line = readLines(con, n = 1)
-    if (grepl("Log marginal likelihood:	", line)) {
+
+    if(length(line) == 0){
+      line = "no log marginal likelihood found"
       break
     }
+    if(grepl("Log marginal likelihood:	", line)) {
+      break
+    }
+
     i = i + 1
   }
   close(con)
-  places = regexpr("[0-9.]+", line)
-  as.numeric(substring(line, places[1]))
+  places = regexpr("-?[0-9.]+", line)
+  if(places[1] > 0)
+    as.numeric(substring(line, places[1]))
+  else
+    -99
 }
