@@ -114,5 +114,5 @@ read.stones <- function(filename){
   if(places[1] > 0)
     as.numeric(substring(line, places[1]))
   else
-    -99
+    NA
 }
