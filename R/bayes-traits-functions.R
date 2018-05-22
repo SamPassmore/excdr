@@ -84,17 +84,18 @@ read.stones <- function(filename){
   while (TRUE) {
     line = readLines(con, n = 1)
     if(length(line) == 0){
-      line = "no log marginal likelihood found"
+      value = "no log marginal likelihood found"
       break
     }
     if(grepl("Log marginal likelihood:	", line)) {
+      places = regexpr("-?[0-9.]+", line)
+      value = as.numeric(substring(line, places[1]))
       break
     }
     i = i + 1
   }
   close(con)
-  places = regexpr("-?[0-9.]+", line)
-  as.numeric(substring(line, places[1]))
+  value
 }
 
 # read.stones <- function(filename){
