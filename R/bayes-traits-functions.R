@@ -84,7 +84,8 @@ read.stones <- function(filename){
   while (TRUE) {
     line = readLines(con, n = 1)
     if(length(line) == 0){
-      value = "no log marginal likelihood found"
+      cat("no log marginal likelihood found")
+      value = NA
       break
     }
     if(grepl("Log marginal likelihood:	", line)) {
